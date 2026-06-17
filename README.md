@@ -1,62 +1,163 @@
-# PathERA
+# 🧭 PathERA
 
-**Emotion-Aware Reasoning Assistant** — Life Decision Simulator for the Productivity / Hackathon track.
+### Emotion-Aware Reasoning Assistant
 
-Generic AI gives direct answers. PathERA guides students through dilemmas with context, emotions, hidden factors, decision trees, tradeoffs, scenario simulation, and personalized recommendations.
+**PathERA** is an AI-powered decision intelligence system designed to help students and young adults navigate difficult life decisions with greater clarity, confidence, and self-awareness.
 
-## Core pipeline (6 modules)
+Most AI assistants provide generic advice. PathERA takes a different approach.
 
-| # | Module | Role |
-|---|--------|------|
-| 1 | User input | Capture the dilemma in natural language |
-| 2 | Context analyzer | Goals · constraints · emotions + **hidden factor detection** |
-| 3 | Decision mapper | Build a branching decision tree |
-| 4 | Tradeoff engine | Benefits & risks per option |
-| 5 | Scenario simulator | "If you choose X → challenges → outcomes" |
-| 6 | Recommendation | Based on **your** stated priorities |
+Instead of immediately telling users what to do, it guides them through a structured reasoning process that uncovers hidden emotional drivers, evaluates tradeoffs, simulates future outcomes, and generates recommendations aligned with their personal priorities.
 
-## Quick start
+---
+
+## 🚀 The Problem
+
+Students frequently face complex life decisions:
+
+* Should I study abroad?
+* Should I quit engineering?
+* Should I take a gap year?
+* Should I choose passion or financial stability?
+* Should I move away from family for opportunities?
+
+Traditional AI tools often provide surface-level answers without understanding the deeper emotional and contextual factors behind these dilemmas.
+
+---
+
+## 💡 The Solution
+
+PathERA acts as an **Emotion-Aware Reasoning Assistant**.
+
+It combines structured decision-making with emotional context to help users understand:
+
+* What options they have
+* What tradeoffs each option creates
+* What hidden factors may be influencing them
+* What future outcomes are most likely
+* Which path best aligns with their priorities
+
+---
+
+# 🧠 Core Pipeline
+
+| Module                         | Purpose                                                                |
+| ------------------------------ | ---------------------------------------------------------------------- |
+| **M1 — User Input**            | Capture the dilemma in natural language                                |
+| **M2 — Context Analyzer**      | Extract goals, constraints, emotions, stakeholders, and hidden factors |
+| **M3 — Decision Mapper**       | Generate realistic decision pathways                                   |
+| **M4 — Tradeoff Engine**       | Compare benefits, risks, and priority alignment                        |
+| **M5 — Scenario Simulator**    | Forecast possible future outcomes                                      |
+| **M6 — Recommendation Engine** | Generate actionable recommendations                                    |
+
+---
+
+# ⭐ Killer Feature: Hidden Factor Detection
+
+PathERA doesn't only analyze what users say.
+
+It attempts to identify what they may not be saying.
+
+Example:
+
+### User Input
+
+> "I want to quit engineering."
+
+### Possible Hidden Factors
+
+* Academic burnout
+* Fear of failure
+* Confidence gap after setbacks
+* Social comparison
+* Wrong-fit vs. wrong-timing confusion
+
+This allows recommendations to address root causes rather than symptoms.
+
+---
+
+# 🎯 Example Dilemmas
+
+* "I want to study abroad but my family doesn't support it."
+* "I have two job offers. One pays more, one feels meaningful."
+* "I think I want to leave engineering but I'm not sure if it's burnout."
+* "Should I take a gap year or finish my degree first?"
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+* Streamlit
+
+### Backend
+
+* Python
+* Modular reasoning pipeline
+
+### AI
+
+* OpenAI API
+* Structured JSON outputs
+
+### Visualization
+
+* Plotly
+* NetworkX
+
+---
+
+# ⚙️ Quick Start
 
 ```bash
+git clone https://github.com/itselodie/PathERA.git
+
 cd PathERA
+
 python -m venv .venv
-.venv\Scripts\activate          # Windows
+
+# Windows
+.venv\Scripts\activate
+
 pip install -r requirements.txt
-copy .env.example .env          # add OPENAI_API_KEY (optional)
+
+copy .env.example .env
+
 streamlit run app.py
 ```
 
-Open `http://localhost:8501`.
+Open:
 
-**Demo Mode** works without an API key — useful for hackathon demos and judging.
+http://localhost:8501
 
-## Configuration
+---
 
-Create `.env` from `.env.example`:
+# 🔑 Environment Variables
 
-```
-OPENAI_API_KEY=sk-...
+Create a `.env` file:
+
+```env
+OPENAI_API_KEY=your_api_key
 OPENAI_MODEL=gpt-4o-mini
 ```
 
-## Tech stack
+PathERA also supports **Demo Mode**, allowing the application to run without an API key for hackathon demonstrations.
 
-- **Frontend:** Streamlit
-- **Backend:** Python modular pipeline
-- **AI:** OpenAI API (JSON structured outputs)
-- **Viz:** Plotly + NetworkX (decision tree, tradeoff charts)
+---
 
-## Example prompts
+# 🌐 Live Demo
 
-- *"I want to study abroad but my family doesn't support it..."*
-- *"I want to quit engineering. I'm exhausted and don't know if it's burnout or wrong fit."*
-- *"Should I take a gap year or push through to finish my degree?"*
+Streamlit Deployment:
 
-## Project structure
+https://pathera-kdupfsqopuubmttvqfhmu2.streamlit.app/
 
-```
+---
+
+# 📂 Project Structure
+
+```text
 PathERA/
-├── app.py                 # Streamlit UI (Module 1 + orchestration)
+├── app.py
 ├── modules/
 │   ├── context_analyzer.py
 │   ├── decision_mapper.py
@@ -70,14 +171,26 @@ PathERA/
 └── .env.example
 ```
 
-## Hackathon pitch angle
+---
 
-**Problem:** Students get generic AI advice on real life decisions.
+# 🏆 Hackathon Pitch
 
-**Solution:** PathERA reasons with emotion and context, surfaces hidden drivers (burnout, fear, wrong-fit), maps options visually, simulates futures, and recommends based on user priorities — not a one-size-fits-all answer.
+### Problem
 
-**Killer feature:** Hidden factor detection — e.g. "I want to quit engineering" → burnout, exam stress, confidence gap, temporary frustration.
+People receive generic AI advice for deeply personal decisions.
+
+### Solution
+
+PathERA introduces emotion-aware reasoning, hidden-factor detection, tradeoff evaluation, future scenario simulation, and personalized recommendations.
+
+### Impact
+
+Helping students and young adults make important life decisions with greater clarity, confidence, and self-awareness.
 
 ---
 
-Built for hackathon demo. Not a substitute for professional counseling.
+## ⚠️ Disclaimer
+
+PathERA is designed for reflection, guidance, and structured reasoning.
+
+It is **not a substitute for professional counseling, therapy, legal advice, financial advice, or medical advice.**
